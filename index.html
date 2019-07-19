@@ -22,7 +22,7 @@ body {
   <script>
   
   'use strict'
-var module = (function () { //This is the module which contains all my functions
+var module = (function () { //This is the module which contains all our functions
 
     function general () {
         // some general magic happens here
@@ -45,9 +45,9 @@ var module = (function () { //This is the module which contains all my functions
         init: init
     };
 
-})(); // attention, module needs to be a self-invoking function, don't forget the ();
+})(); // attention, module needs to be a self-invoking function-expression, don't forget the (); in the end
 
-$(document).ready(function () { // then we just call our module when everything is loaded
+$(document).ready(function () { // then we just call our module.init when everything is ready
 
     module.init();
     console.log("Your module is alive!");
