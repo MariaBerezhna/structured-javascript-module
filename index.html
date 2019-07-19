@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<title>Structured Javascript</title>
+<style>
+body {
+    margin: 100px;
+}
+</style>
+    </head>
+    <body>
+        <h1>This is how I like to scructure my JS code</h1>
+        <p>
+            Everything is devided into modules and it makes it easier to work once I have more and more features.
+            This example will containe 1 module with 3 simple functions, but it is possible to develop more when a project grows and requiers new features.
+            The main rule - keep it clean and put things in a logical order.
+        </p>
+        <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+  <script>
+  
+  'use strict'
+var module = (function () { //This is the module which contains all my functions
+
+    function general () {
+        // some general magic happens here
+        console.log('general magic happened');
+    }
+
+    function additional () {
+        //  some additional magic happens here
+        console.log('additional magic happend');
+    }
+
+    function init () { // now we'll need to initialize our functions
+    
+        console.log('Initializing the magic...');
+        general();
+        additional();
+    }
+
+    return { // and return it
+        init: init
+    };
+
+})(); // attention, module needs to be a self-invoking function, don't forget the ();
+
+$(document).ready(function () { // then we just call our module when everything is loaded
+
+    module.init();
+    console.log("Your module is alive!");
+});
+  </script>
+    </body>
+</html>
